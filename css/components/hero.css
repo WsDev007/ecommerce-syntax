@@ -1,9 +1,9 @@
 .hero-nav{
     background: url(../../images/banners/background-man.jpg) no-repeat center;
-
     height: 500px;
     position: relative;
     background-size: cover;
+    border-radius: 20px;
     
 }
 

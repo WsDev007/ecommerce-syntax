@@ -1,7 +1,6 @@
 /* product-category */
 
 .categories-section{
-    background-color: aqua;
     padding-top: 40px;
     padding-bottom: 40px;
     display: flex;
@@ -42,7 +41,7 @@
 }
 
 .esporte{
-    background: url(../../images/products/twnia\ exportivo.jpg) no-repeat center;
+    background: url(../../images/products/tênis\ esportivo.jpg) no-repeat center;
     background-size: cover;
 }
 
