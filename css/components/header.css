@@ -45,3 +45,109 @@
 .nav-secondary a:hover{
     opacity: 0.7;
 }
+
+
+
+
+.nav-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.menu-toggle{
+    display:none;
+}
+
+.menu-icon{
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.menu-icon img{
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.menu-icon:hover img{
+    opacity: 0.7;
+}
+
+
+/* --- Ajuste para telas até 1280px --- */
+@media (max-width: 1280px) {
+    .site-header {
+        width: calc(100% - 40px);
+    }
+}
+
+/* O input checkbox sempre fica escondido */
+.menu-toggle {
+    display: none;
+}
+
+/* O ícone de hambúrguer fica escondido no Desktop */
+.menu-icon {
+    display: none; 
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Garante que ele fique acima do menu quando aberto */
+}
+
+/* --- MEDIA QUERY PARA MOBILE (ex: telas até 992px) --- */
+@media (max-width: 992px) {
+    
+    /* Mostra o ícone do menu hambúrguer */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Transforma o menu normal em um menu lateral escondido */
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Esconde fora da tela */
+        flex-direction: column;
+        width: 250px; /* Aumentei um pouco para caber os textos confortavelmente */
+        height: 100vh; /* Faz o menu ocupar toda a altura da tela */
+        padding: 80px 20px 20px;
+        background-color: #ffffff;
+        transition: right 0.3s ease;
+        align-items: flex-start;
+        gap: 2rem;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Uma sombrinha opcional para destacar */
+    }
+
+    /* Centraliza os blocos de navegação no mobile */
+    .nav-center, 
+    .nav-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Coloca os itens em coluna */
+    .nav-center ul, 
+    .nav-secondary ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    /* Ajuste visual dos links no menu lateral */
+    .nav-center a, 
+    .nav-secondary a {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 1rem;
+        display: block;
+    }
+
+    /* Quando o checkbox é marcado (clique no ícone), o menu desliza para a tela */
+    .menu-toggle:checked ~ .nav-container {
+        right: 0;
+    }
+}
